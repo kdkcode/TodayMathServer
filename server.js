@@ -14,12 +14,12 @@ app.use((req, res, next) => {
 
 // transporter 객체 생성
 let transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+  host: "smtp.kakao.com",
   port: 465,
   secure: true,
   auth: {
-    user: process.env.EMAIL_GUSER, // 발신자 이메일 주소
-    pass: process.env.EMAIL_GPASS, // 발신자 이메일 비밀번호
+    user: process.env.EMAIL_USER, // 발신자 이메일 주소
+    pass: process.env.EMAIL_PASSWORD, // 발신자 이메일 비밀번호
   },
 });
 
@@ -28,7 +28,7 @@ app.post("/send-email", (req, res) => {
   const { studentName, parentName, school, grade, studentPhone, parentPhone, message } = req.body;
 
   const mailOptions = {
-    from: process.env.EMAIL_GUSER,
+    from: process.env.EMAIL_USER,
     to: "sujin924@kakao.com",
     subject: "상담문의",
     html: `
