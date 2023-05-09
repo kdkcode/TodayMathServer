@@ -17,7 +17,7 @@ let transporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: "sujin924@kakao.com", // 발신자 이메일 주소
-    pass: "wpqrwqupr14!", // 발신자 이메일 비밀번호
+    pass: process.env.EMAIL_PASSWORD, // 발신자 이메일 비밀번호
   },
 });
 
