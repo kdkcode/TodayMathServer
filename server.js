@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 let transporter = nodemailer.createTransport({
   host: "smtp.kakao.com",
   port: 465,
-  secure: true,
+  secure: false,
   auth: {
     user: "sujin924@kakao.com", // 발신자 이메일 주소
     pass: "wpqrwqupr14!", // 발신자 이메일 비밀번호
