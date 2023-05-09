@@ -18,8 +18,8 @@ let transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: "sujin924@kakao.com", // 발신자 이메일 주소
-    pass: "wpqrwqupr14!", // 발신자 이메일 비밀번호
+    user: process.env.EMAIL_USER, // 발신자 이메일 주소
+    pass: process.env.EMAIL_PASSWORD, // 발신자 이메일 비밀번호
   },
 });
 
@@ -28,7 +28,7 @@ app.post("/send-email", (req, res) => {
   const { studentName, parentName, school, grade, studentPhone, parentPhone, message } = req.body;
 
   const mailOptions = {
-    from: "sujin924@kakao.com",
+    from: process.env.EMAIL_USER,
     to: "sujin924@kakao.com",
     subject: "상담문의",
     html: `
