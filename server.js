@@ -1,5 +1,6 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
+const cors = require("cors");
 const app = express();
 
 // bodyParser 미들웨어 추가
