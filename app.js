@@ -53,5 +53,5 @@ app.post("/send-email", (req, res) => {
 });
 
 // 서버 구동
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
