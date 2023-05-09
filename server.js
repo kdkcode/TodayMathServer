@@ -4,6 +4,7 @@ const app = express();
 
 // bodyParser 미들웨어 추가
 app.use(express.json());
+app.use(cors());
 
 app.use((req, res, next) => {
   res.setHeader('Content-Security-Policy', "default-src 'none'; font-src 'self'; img-src 'self'; manifest-src 'self'");
